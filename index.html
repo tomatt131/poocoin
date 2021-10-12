@@ -1,0 +1,252 @@
+<div id="title">Poocoin thing</div>
+<div id="buttons">
+<button onClick="thim();">30m</button>
+<button onClick="oneh();">1h</button>
+<button onClick="thrh();">3h</button>
+<button onClick="sixh();">6h</button>
+<button onClick="tweh();">12h</button>
+</div>
+<div id="maincontainer">
+<div id="response"></div>
+<div id="response2"></div>
+</div>
+<style>
+* {
+    font-family: sans-serif;
+}
+div#title {
+    margin: auto;
+    width: max-content;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    font-size: 40px;
+}
+
+div#buttons {
+    width: max-content;
+    margin: auto;
+}
+button {
+    padding: 10px;
+    border: none;
+    border-radius: 155px;
+}
+
+div#response2:before {
+    content: "Top sites";
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+div#response:before {
+    content: "Top-coins";
+    margin: auto;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+#response, #response2 {
+    width: 550px;
+    display: flex;
+    flex-direction: column;
+}
+
+div#maincontainer {
+    display: flex;
+    flex-direction: row;
+}
+
+a {
+    padding: 10px;
+    margin: 5px;
+    background: #ededed;
+    border-radius: 30px;
+    padding-left: 15px;
+    color: black;
+}
+</style>
+
+<script>
+function addCode(text) {
+  document.getElementById("response").innerHTML += 
+    `<a href="${text}">${text}</a>`;
+}
+function addCode2(text) {
+  document.getElementById("response2").innerHTML += 
+    `<a href="${text}">${text}</a>`;
+}
+
+async function thim(){
+document.getElementById('response').innerHTML = '';
+var test = await fetch("https://shielded-sands-77917.herokuapp.com/https://api1.poocoin.app/top-requests", {
+    "credentials": "omit",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
+        "Accept": "*/*",
+        "Accept-Language": "ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3",
+        "Content-Type": "application/json",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Site": "same-site",
+        "Pragma": "no-cache",
+        "Cache-Control": "no-cache"
+    },
+    "referrer": "https://poocoin.app/",
+    "body": "{\"13\":37,\"age\":\"30m\"}",
+    "method": "POST",
+    "mode": "cors"
+}).then(res => {console.log(res);return res.json()});
+
+console.log(test);
+
+var length = test['data']['viewer']['accounts'][0]['topPaths'].length;
+
+for (i = 0; i < length; i++){
+	console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'])
+  var urls = "https://poocoin.app" + test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'];
+  var urls2 =  "https://" + test['data']['viewer']['accounts'][0]['topReferers'][i]['dimensions']['metric'];
+  addCode(urls);
+  addCode2(urls2);
+  
+}
+};
+
+async function oneh(){
+document.getElementById('response').innerHTML = '';
+var test = await fetch("https://shielded-sands-77917.herokuapp.com/https://api1.poocoin.app/top-requests", {
+    "credentials": "omit",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
+        "Accept": "*/*",
+        "Accept-Language": "ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3",
+        "Content-Type": "application/json",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Site": "same-site",
+        "Pragma": "no-cache",
+        "Cache-Control": "no-cache"
+    },
+    "referrer": "https://poocoin.app/",
+    "body": "{\"13\":37,\"age\":\"1h\"}",
+    "method": "POST",
+    "mode": "cors"
+}).then(res => {console.log(res);return res.json()});
+
+console.log(test['data']['viewer']['accounts'][0]['topPaths']);
+
+var length = test['data']['viewer']['accounts'][0]['topPaths'].length;
+
+for (i = 0; i < length; i++){
+	console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'])
+  var urls = "https://poocoin.app" + test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'];
+  var urls2 =  "https://" + test['data']['viewer']['accounts'][0]['topReferers'][i]['dimensions']['metric'];
+  addCode(urls);
+  addCode2(urls2);
+  
+}
+};
+
+async function thrh(){
+document.getElementById('response').innerHTML = '';
+var test = await fetch("https://shielded-sands-77917.herokuapp.com/https://api1.poocoin.app/top-requests", {
+    "credentials": "omit",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
+        "Accept": "*/*",
+        "Accept-Language": "ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3",
+        "Content-Type": "application/json",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Site": "same-site",
+        "Pragma": "no-cache",
+        "Cache-Control": "no-cache"
+    },
+    "referrer": "https://poocoin.app/",
+    "body": "{\"13\":37,\"age\":\"3h\"}",
+    "method": "POST",
+    "mode": "cors"
+}).then(res => {console.log(res);return res.json()});
+
+console.log(test['data']['viewer']['accounts'][0]['topPaths']);
+
+var length = test['data']['viewer']['accounts'][0]['topPaths'].length;
+
+for (i = 0; i < length; i++){
+	console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'])
+  var urls = "https://poocoin.app" + test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'];
+  var urls2 =  "https://" + test['data']['viewer']['accounts'][0]['topReferers'][i]['dimensions']['metric'];
+  addCode(urls);
+  addCode2(urls2);
+}
+};
+
+async function sixh(){
+document.getElementById('response').innerHTML = '';
+var test = await fetch("https://shielded-sands-77917.herokuapp.com/https://api1.poocoin.app/top-requests", {
+    "credentials": "omit",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
+        "Accept": "*/*",
+        "Accept-Language": "ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3",
+        "Content-Type": "application/json",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Site": "same-site",
+        "Pragma": "no-cache",
+        "Cache-Control": "no-cache"
+    },
+    "referrer": "https://poocoin.app/",
+    "body": "{\"13\":37,\"age\":\"6h\"}",
+    "method": "POST",
+    "mode": "cors"
+}).then(res => {console.log(res);return res.json()});
+
+console.log(test['data']['viewer']['accounts'][0]['topPaths']);
+
+var length = test['data']['viewer']['accounts'][0]['topPaths'].length;
+
+for (i = 0; i < length; i++){
+	console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'])
+  var urls = "https://poocoin.app" + test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'];
+  var urls2 =  "https://" + test['data']['viewer']['accounts'][0]['topReferers'][i]['dimensions']['metric'];
+  addCode(urls);
+  addCode2(urls2);
+  
+}
+};
+
+async function tweh(){
+document.getElementById('response').innerHTML = '';
+var test = await fetch("https://shielded-sands-77917.herokuapp.com/https://api1.poocoin.app/top-requests", {
+    "credentials": "omit",
+    "headers": {
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:93.0) Gecko/20100101 Firefox/93.0",
+        "Accept": "*/*",
+        "Accept-Language": "ru-RU,ru;q=0.8,en-US;q=0.5,en;q=0.3",
+        "Content-Type": "application/json",
+        "Sec-Fetch-Dest": "empty",
+        "Sec-Fetch-Mode": "no-cors",
+        "Sec-Fetch-Site": "same-site",
+        "Pragma": "no-cache",
+        "Cache-Control": "no-cache"
+    },
+    "referrer": "https://poocoin.app/",
+    "body": "{\"13\":37,\"age\":\"12h\"}",
+    "method": "POST",
+    "mode": "cors"
+}).then(res => {console.log(res);return res.json()});
+
+console.log(test['data']['viewer']['accounts'][0]['topPaths']);
+
+var length = test['data']['viewer']['accounts'][0]['topPaths'].length;
+
+for (i = 0; i < length; i++){
+	console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'])
+  var urls = "https://poocoin.app" + test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'];
+  var urls2 =  "https://" + test['data']['viewer']['accounts'][0]['topReferers'][i]['dimensions']['metric'];
+  addCode(urls);
+  addCode2(urls2);
+  
+}
+};
+</script>
