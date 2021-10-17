@@ -116,13 +116,13 @@ async function getAddress(token){
 	return name
 }
 
-async function addCode(text, i) {
+async function addCode(text, i, counts) {
 var coinAddress = text.replace("/tokens/", "");
 getName = await getAddress(coinAddress);
 var mcap = await marketcap(coinAddress);
 mcap = numberWithCommas(mcap);
   document.getElementById("response").innerHTML += 
-    `<div class="coinlink"><a style="width:25px;">${i+1}</a><a style="min-width:220px;" href="https://poocoin.app${text}" >${getName}</a><a>${mcap}</a></div>`;
+    `<div class="coinlink"><a style="width:25px;">${i+1}</a><a style="min-width:220px;" href="https://poocoin.app${text}" >${getName}</a><a>${mcap}</a><a>${counts}</a></div>`;
 	
 }
 function addCode2(text) {
@@ -135,10 +135,11 @@ var length = test['data']['viewer']['accounts'][0]['topPaths'].length;
 
 for (i = 0; i < length; i++){
 	//console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'])
-	console.log(test);
+	//console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['count']);
 	var urls = test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'];
 	var urls2 =  test['data']['viewer']['accounts'][0]['topReferers'][i]['dimensions']['metric'];
-	await addCode(urls, i);
+	var counts = test['data']['viewer']['accounts'][0]['topPaths'][i]['count'];
+	await addCode(urls, i, counts);
 	addCode2(urls2);
 }
 };
