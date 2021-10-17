@@ -125,7 +125,7 @@ getName = await getAddress(coinAddress);
 var mcap = await marketcap(coinAddress);
 mcap = numberWithCommas(mcap);
   document.getElementById("response").innerHTML += 
-    `<div class="coinlink"><a style="width:25px;">${i+1}</a><a style="min-width:220px;" href="https://poocoin.app${text}" >${getName}</a><a style="width:130px;">MC: ${mcap}</a><a style="width:75px;">Hits: ${counts}</a></div>`;
+    `<div class="coinlink"><a style="width:25px;">${i+1}</a><a style="min-width:220px;" href="https://poocoin.app${text}" >${getName}</a><a style="width:150px;">MC: ${mcap}</a><a style="width:75px;">Hits: ${counts}</a></div>`;
 	
 }
 function addCode2(text) {
@@ -138,7 +138,7 @@ var length = test['data']['viewer']['accounts'][0]['topPaths'].length;
 
 for (i = 0; i < length; i++){
 	console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'])
-	console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['count']);
+	console.log(test);
 	var urls = test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'];
 	var urls2 =  test['data']['viewer']['accounts'][0]['topReferers'][i]['dimensions']['metric'];
 	var counts = test['data']['viewer']['accounts'][0]['topPaths'][i]['count'];
