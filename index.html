@@ -137,8 +137,8 @@ async function thing(test){
 var length = test['data']['viewer']['accounts'][0]['topPaths'].length;
 
 for (i = 0; i < length; i++){
-	//console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'])
-	//console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['count']);
+	console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'])
+	console.log(test['data']['viewer']['accounts'][0]['topPaths'][i]['count']);
 	var urls = test['data']['viewer']['accounts'][0]['topPaths'][i]['dimensions']['metric'];
 	var urls2 =  test['data']['viewer']['accounts'][0]['topReferers'][i]['dimensions']['metric'];
 	var counts = test['data']['viewer']['accounts'][0]['topPaths'][i]['count'];
