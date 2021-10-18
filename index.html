@@ -121,16 +121,41 @@ async function getAddress(token){
 
 async function addCode(text, i, counts) {
 var bgcolor = "#ededed";
-if (counts > 40){
-	bgcolor = "#F50505";
-	if (counts > 80){
-		bgcolor = "#CA4206";
-		if (counts > 120){
-			bgcolor = "#9F8006";
-			if (counts > 160){
-				bgcolor = "#73BD07";
-				if (counts > 200){
-					bgcolor = "#48FA07";
+if (counts > 50){
+	bgcolor = "#E1EEDD";
+	if (counts > 100){
+		bgcolor = "#D5F0CC";
+		if (counts > 150){
+			bgcolor = "#CAF1BC";
+			if (counts > 200){
+				bgcolor = "#BEF2AB";
+				if (counts > 250){
+					bgcolor = "#A6F58A";
+					if (counts > 350){
+						bgcolor = "#9BF67A";
+						if (counts > 400){
+							bgcolor = "#8FF769";
+							if (counts > 450){
+								bgcolor = "#83F959";
+								if (counts > 500){
+									bgcolor = "#77FA48";
+									if (counts > 550){
+										bgcolor = "#6BFB38";
+										if (counts > 600){
+											bgcolor = "#60FC27";
+											if (counts > 650){
+												bgcolor = "#54FE17";
+												if (counts > 700){
+													bgcolor = "#48FF06";
+
+												}	
+											}	
+										}	
+									}	
+								}	
+							}	
+						}	
+					}	
 				}
 			}
 		}
