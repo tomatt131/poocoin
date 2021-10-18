@@ -141,7 +141,7 @@ getName = await getAddress(coinAddress);
 var mcap = await marketcap(coinAddress);
 mcap = numberWithCommas(mcap);
   document.getElementById("response").innerHTML += 
-    `<div class="coinlink"><a style="width:25px;">${i+1}</a><a style="min-width:220px;" href="https://poocoin.app${text}" >${getName}</a><a style="width:130px;">${mcap}</a><a style=`"width:95px;background:${bgcolor};"`>Hits: ${counts}</a></div>`;
+    `<div class="coinlink"><a style="width:25px;">${i+1}</a><a style="min-width:220px;" href="https://poocoin.app${text}" >${getName}</a><a style="width:130px;">${mcap}</a><a style="width:95px;background:${bgcolor};">Hits: ${counts}</a></div>`;
 	
 }
 function addCode2(text) {
